@@ -1,0 +1,22 @@
+# Unreal Engine build files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Visual Studio files
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# OS/Tool generated
+.DS_Store
+Thumbs.db
+.vscode/
+
+# 기타
+*.log
+*.sin
