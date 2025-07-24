@@ -35,5 +35,9 @@ public:
 	USphereComponent* GetCollisionComp() const { return CollisionComp; }
 	/** Returns ProjectileMovement subobject **/
 	UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
+
+public:
+	FVector TraceStart;
+	void SetDebugLineStart(FVector InStartPoint);
 };
 

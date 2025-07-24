@@ -25,8 +25,8 @@ AMomentsProjectile::AMomentsProjectile()
 	// Use a ProjectileMovementComponent to govern this projectile's movement
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileComp"));
 	ProjectileMovement->UpdatedComponent = CollisionComp;
-	ProjectileMovement->InitialSpeed = 3000.f;
-	ProjectileMovement->MaxSpeed = 3000.f;
+	ProjectileMovement->InitialSpeed = 6000.f;
+	ProjectileMovement->MaxSpeed = 6000.f;
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = true;
 	
@@ -38,7 +38,9 @@ void AMomentsProjectile::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
+	auto _TraceEnd = GetActorLocation();
 
+	DrawDebugLine(GetWorld(), TraceStart, _TraceEnd, FColor::Blue, false, -1.f, 0, 1.f);
 }
 
 void AMomentsProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)

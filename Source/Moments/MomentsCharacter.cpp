@@ -195,19 +195,15 @@ void AMomentsCharacter::Mouse_Shoot()
 			GetWorld()->LineTraceSingleByChannel(_OutHitResult, _TraceStart, _TraceEnd, ECollisionChannel::ECC_Camera, _Params);
 
 			AMomentsProjectile* _X1 = World->SpawnActor<AMomentsProjectile>(ProjectileClass, _TraceStart, SpawnRotation, ActorSpawnParams);
-			if (!_X1)
-			{
-				int a = 0;
-			}
+			if(_X1)
+				_X1->SetDebugLineStart(_TraceStart);
 
 			//DrawDebugLine(GetWorld(), _TraceStart, _TraceEnd, FColor::Blue, false, 2.f, 0, 1.f);
 
 			_TraceStart = GetMesh()->GetSocketLocation("Muzzle_02");
 			AMomentsProjectile* _X2 = World->SpawnActor<AMomentsProjectile>(ProjectileClass, _TraceStart, SpawnRotation, ActorSpawnParams);
-			if (!_X2)
-			{
-				int a = 0;
-			}
+			if (_X2)
+				_X2->SetDebugLineStart(_TraceStart);
 
 			//DrawDebugLine(GetWorld(), _TraceStart, _TraceEnd, FColor::Red, false, 2.f, 0, 1.f);
 		}
